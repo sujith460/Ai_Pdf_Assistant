@@ -14,21 +14,21 @@ router = APIRouter(prefix="/auth", tags=["Authentication"])
     "/login",
     response_model=Token,
     summary="User login and JWT token generation",
-    description="Authenticate user by email and password via OAuth2 form, returning a JWT bearer token.",
+    description="Authenticate user by username and password via OAuth2 form, returning a JWT bearer token.",
 )
 def login_for_access_token(
     form_data: OAuth2PasswordRequestForm = Depends(),
     db: Session = Depends(get_db),
 ) -> Token:
     """Authenticate user credentials and issue JWT access token."""
-    # OAuth2 username field is treated as the user's email address
-    user = db.query(User).filter(User.email == form_data.username).first()
+    # Query user by unique username
+    user = db.query(User).filter(User.username == form_data.username).first()
 
     # Generic authentication error to avoid user enumeration attacks
     if not user or not verify_password(form_data.password, user.password_hash):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid email or password",
+            detail="Invalid username or password",
             headers={"WWW-Authenticate": "Bearer"},
         )
 

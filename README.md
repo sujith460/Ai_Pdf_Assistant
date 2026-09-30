@@ -155,9 +155,12 @@ ai-pdf-assistant/
 │       ├── summary_service.py # Summary service orchestrator
 │       └── quiz_service.py  # Quiz generation, payload validation, & DB persistence
 │
+├── docs/                    # Documentation assets & Swagger UI screenshots
+│   └── swagger_ui.png
 ├── uploads/                 # Storage directory for uploaded PDF files
 ├── tests/                   # Automated unit & integration test suites
 │   ├── __init__.py
+│   ├── test_auth_api.py     # Authentication & Username login test suite
 │   ├── test_pdf_service.py  # Page-level OCR service test suite
 │   ├── test_summary_api.py  # Summary API endpoint test suite
 │   └── test_quiz_api.py     # Quiz API endpoint test suite
@@ -172,6 +175,8 @@ ai-pdf-assistant/
 ---
 
 ## API Endpoints Reference
+
+![Swagger UI Interactive API Documentation](docs/swagger_ui.png)
 
 | Method | Endpoint | Authentication | Description |
 | :--- | :--- | :--- | :--- |
@@ -359,6 +364,9 @@ The application will start at `http://127.0.0.1:8000`.
 Run the automated test suites using the virtual environment Python interpreter:
 
 ```powershell
+# Run Authentication & Username Login Test Suite
+.\venv\Scripts\python.exe -m tests.test_auth_api
+
 # Run OCR Service Test Suite
 .\venv\Scripts\python.exe -m tests.test_pdf_service
 
