@@ -1,0 +1,32 @@
+# Environment Variables
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Databases
+*.db
+*.sqlite3
+
+# Uploaded Files (preserve directory structure via .gitkeep)
+uploads/*
+!uploads/.gitkeep
+
+# IDEs & System Files
+.vscode/
+.idea/
+.DS_Store
