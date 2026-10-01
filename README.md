@@ -4,28 +4,6 @@ A high-performance, modular FastAPI backend service designed to process PDF docu
 
 
 
-## Technology Stack
-
-| Technology | Requirement / Version | Role & Purpose |
-| :--- | :--- | :--- |
-| **Python** | `^3.11` | Primary programming language |
-| **FastAPI** | `>=0.110.0` | High-performance ASGI Web Framework |
-| **Uvicorn** | `>=0.28.0` | Lightning-fast ASGI Server |
-| **SQLAlchemy** | `>=2.0.28` | Relational ORM & Database abstraction |
-| **SQLite** | Built-in | Embedded relational database engine (`ai_pdf_assistant.db`) |
-| **Pydantic** | `>=2.6.4` | Data validation, settings loading, and schema serialization |
-| **Pydantic Settings** | `>=2.2.1` | Environment variable management |
-| **PyMuPDF** | `>=1.24.0` | High-speed PDF page rendering engine (`get_pixmap`) |
-| **Tesseract OCR / pytesseract** | `>=0.3.10` | Optical Character Recognition engine & Python wrapper |
-| **Pillow** | `>=10.0.0` | In-memory image processing library for pytesseract |
-| **Google Gemini API** | `>=0.1.0` | Generative AI SDK (`google-genai` / `gemini-2.5-flash`) |
-| **PyJWT** | `>=2.8.0` | JSON Web Token encoding and decoding |
-| **pwdlib[argon2]** | `>=0.2.0` | Secure password hashing using Argon2 algorithm |
-| **python-multipart** | `>=0.0.12` | Multipart form-data handling for file uploads |
-
----
-
-
 
 ## API Endpoints Reference
 
