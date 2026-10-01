@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./ai_pdf_assistant.db"
 
     # JWT Security Configuration
-    SECRET_KEY: str = "57f89d6e4e70c9d6f8e4a04d9b0a4d6c8e4a04d9b0a4d6c8e4a04d9b0a4d6c8e"
+    SECRET_KEY: str = "Enter Your Secret Key"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
